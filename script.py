@@ -19,4 +19,9 @@ except FileNotFoundError:
     print(f"Error: no such file { path }")
     exit(1)
 
-print(masses)
+fuel = 0
+
+for mass in masses:
+    fuel += mass // 3 - 2
+
+print(f"The fuel required is { fuel }")
