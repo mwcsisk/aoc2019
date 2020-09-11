@@ -15,9 +15,9 @@ if __name__ == '__main__':
     # Argument Parser. Parses CLI arguments and provides help text to user.
     parser = argparse.ArgumentParser(description='''
         Takes a comma-separated string of integers and evaluates them based on Intcode rules, printing the resulting array.''')
-    parser.add_argument("array", default=False, help='''
+    parser.add_argument("array", default=False, nargs='?', help='''
         A comma-separated string of integers to use with the Intcomp''')
-    parser.add_argument("-f", "--filepath", nargs=1, default=False, help='''
+    parser.add_argument("-f", "--filepath", default=False, help='''
         The path to a text file containing a comma-separated list of integers for use with the Intcomp''')
     args = parser.parse_args()
 
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     if args.array and args.filepath:
         print("Either a string of integers or a filepath may be provided, but not both.")
         exit(1)
-    
+
     # If program was given a file, open it and put its contents into a list
     elif args.filepath:
         with open(args.filepath, "r") as f:
