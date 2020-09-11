@@ -11,7 +11,7 @@ def intcomp(array):
     return array
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Takes a comma-separated string of integers and evaluates them based on Intcode rules, printing the resulting string of integers.')
+    parser = argparse.ArgumentParser(description='Takes a comma-separated string of integers and evaluates them based on Intcode rules, printing the resulting array.')
     parser.add_argument("array", help="A comma-separated string of integers to use with the Intcomp ")
     args = parser.parse_args()
     
