@@ -22,6 +22,7 @@ if __name__ == '__main__':
                     masses.append(line)
                 except ValueError:
                     print('Invalid input file. File must only contain integers.')
+                    exit(1)
     except FileNotFoundError:
         print(f"Error: no such file { path }")
         exit(1)
